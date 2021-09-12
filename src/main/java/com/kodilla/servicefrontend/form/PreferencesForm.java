@@ -22,10 +22,10 @@ public class PreferencesForm extends FormLayout {
     private PreferencesView preferencesView;
 
     private TextField userId = new TextField("userId");
-    private TextField departureCity = new TextField("departureCity");
-    private TextField destinationCity = new TextField("destinationCity");
+    private TextField trailBegin = new TextField("trailBegin");
+    private TextField trailEnd = new TextField("trailEnd");
     private TextField minTemperature = new TextField("minTemperature");
-    private TextField maxPrice = new TextField("maxPrice");
+    private TextField distance = new TextField("distance");
     private Binder<Preference> binder = new Binder<>(Preference.class);
 
     Button save = new Button("Save", VaadinIcon.CHECK.create());
@@ -37,7 +37,7 @@ public class PreferencesForm extends FormLayout {
         this.preferencesView = view;
         HorizontalLayout buttons = new HorizontalLayout(save, delete);
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        add(userId, departureCity,destinationCity, minTemperature, maxPrice, buttons);
+        add(userId, trailBegin,trailEnd, minTemperature, distance, buttons);
         binder.bindInstanceFields(this);
 
         save.addClickListener(event -> save());

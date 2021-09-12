@@ -27,11 +27,13 @@ public class PreferenceFacade {
     }
 
     public List<Preference> getAllPreferences() {
+        System.out.println("TEST: PreferenceFacade::getAllPreferences: " + preferenceClient.getAllPreferences());
+        System.out.println("TEST: PreferenceFacade::getAllPreferences::size?: " + preferenceClient.getAllPreferences().getPreferences().size());
         return preferenceMapper.mapToPreferenceListFromPreferenceListDto( preferenceClient.getAllPreferences());
     }
 
     public List<Preference> getPreferencesByDestinationPoint(final String point) {
-        return preferenceMapper.mapToPreferenceListFromPreferenceListDto( preferenceClient.getPreferencesByDestinationCity(point));
+        return preferenceMapper.mapToPreferenceListFromPreferenceListDto( preferenceClient.getPreferencesBytrailBegin(point));
     }
 
     public void deletePreference(final Long id) {

@@ -78,7 +78,6 @@ public class PreferenceClient {
                 return new PreferenceDto();
             }
         }
-
         return new PreferenceDto();
     }
 
@@ -86,7 +85,6 @@ public class PreferenceClient {
         URI url = UriComponentsBuilder.fromHttpUrl(adminConfig.getBackendHostAddress())
                 .path("/preferences")
                 .build().encode().toUri();
-
         try{
             PreferenceListDto response = restTemplate.getForObject(url, PreferenceListDto.class);
             return Optional.ofNullable(response).orElse(new PreferenceListDto(new ArrayList<>()));
@@ -96,11 +94,10 @@ public class PreferenceClient {
         }
     }
 
-    public PreferenceListDto getPreferencesByDestinationCity(final String city){
+    public PreferenceListDto getPreferencesBytrailBegin(final String trailBegin){
         URI url = UriComponentsBuilder.fromHttpUrl(adminConfig.getBackendHostAddress() + "/preferences/")
-                .queryParam("city", city)
+                .queryParam("trailBegin", trailBegin)
                 .build().encode().toUri();
-
         try{
             PreferenceListDto response = restTemplate.getForObject(url, PreferenceListDto.class);
             return Optional.ofNullable(response).orElse(new PreferenceListDto(new ArrayList<>()));
@@ -120,5 +117,4 @@ public class PreferenceClient {
             log.error(e.getMessage(), e);
         }
     }
-
 }

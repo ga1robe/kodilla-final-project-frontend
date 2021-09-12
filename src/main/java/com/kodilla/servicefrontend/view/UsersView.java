@@ -1,6 +1,6 @@
 package com.kodilla.servicefrontend.view;
 
-import com.kodilla.servicefrontend.UserFacade;
+import com.kodilla.servicefrontend.backend.api.UserFacade;
 import com.kodilla.servicefrontend.domain.User;
 import com.kodilla.servicefrontend.form.UsersForm;
 import com.vaadin.flow.component.button.Button;
@@ -54,7 +54,7 @@ public class UsersView extends VerticalLayout {
         filterField.setValueChangeMode(ValueChangeMode.EAGER);
         filterField.addValueChangeListener(e -> refresh(e.getValue()));
 
-        grid.setColumns("id", "name", "surname", "email", "securePassword", "registered", "notificationIds");
+        grid.setColumns("id", "name", "surname", "email", "securePassword", "registered", "preferenceIds");
         HorizontalLayout toolbar = new HorizontalLayout(filterField, addNewUser);
         HorizontalLayout mainContent = new HorizontalLayout(grid, usersForm);
         mainContent.setSizeFull();

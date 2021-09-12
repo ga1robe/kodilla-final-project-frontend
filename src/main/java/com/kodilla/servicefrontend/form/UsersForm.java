@@ -1,6 +1,6 @@
 package com.kodilla.servicefrontend.form;
 
-import com.kodilla.servicefrontend.UserFacade;
+import com.kodilla.servicefrontend.backend.api.UserFacade;
 import com.kodilla.servicefrontend.domain.User;
 import com.kodilla.servicefrontend.view.UsersView;
 import com.vaadin.flow.component.button.Button;

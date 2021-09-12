@@ -54,7 +54,8 @@ public class PreferencesView extends VerticalLayout {
         filterField.setValueChangeMode(ValueChangeMode.EAGER);
         filterField.addValueChangeListener(e -> refresh(e.getValue()));
 
-        grid.setColumns("id", "userId", "departurePoint","destinationPoint", "minTemperature", "distance");
+        grid.setColumns("id", "userId", "trailBegin", "trailEnd", "minTemperature", "distance");
+//        grid.setColumns("id", "userDto", "trailBegin", "trailEnd", "minTemperature", "distance");
         HorizontalLayout toolbar = new HorizontalLayout(filterField, addNewPreference);
         HorizontalLayout mainContent = new HorizontalLayout(grid, preferencesForm);
         mainContent.setSizeFull();

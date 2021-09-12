@@ -1,7 +1,5 @@
-package com.kodilla.servicefrontend;
+package com.kodilla.servicefrontend.backend.api;
 
-
-import com.kodilla.servicefrontend.backend.api.UserClient;
 import com.kodilla.servicefrontend.backend.api.mapper.UserMapper;
 import com.kodilla.servicefrontend.domain.User;
 import lombok.AllArgsConstructor;
