@@ -33,7 +33,6 @@ public class PreferenceMapper {
     }
 
     public List<Preference> mapToPreferenceList(List<PreferenceDto> dtoList) {
-        System.out.println("TEST. dtoList(size)" + dtoList.size());
         return dtoList.stream()
                 .map(this::mapToPreference)
                 .collect(Collectors.toList());
