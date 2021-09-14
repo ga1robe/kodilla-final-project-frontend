@@ -13,6 +13,6 @@ import java.util.List;
 @Builder(toBuilder = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PreferenceListDto {
-    @JsonProperty("preferences")
+    @JsonProperty("preferenceDtoList")
     private List<PreferenceDto> preferences;
 }

@@ -17,8 +17,8 @@ public class PreferenceDto {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("userDto")
-    private UserDto userDto;
+    @JsonProperty("userId")
+    private Long userId;
 
     @JsonProperty("trailBegin")
     private String trailBegin;
@@ -36,7 +36,7 @@ public class PreferenceDto {
     public String toString() {
         return "PreferenceDto{" +
                 "id=" + id +
-                ", userDto=" + userDto +
+                ", userId=" + userId +
                 ", trailBegin='" + trailBegin + '\'' +
                 ", trailEnd='" + trailEnd + '\'' +
                 ", distance=" + distance +

@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,11 +28,12 @@ public class PreferenceMapper {
                 .trailEnd( dto.getTrailEnd() )
                 .minTemperature( dto.getMinTemperature().toString() )
                 .distance( dto.getDistance().toString() )
-                .userId( dto.getUserDto().getId().toString() )
+                .userId( dto.getUserId().toString() )
                 .build();
     }
 
     public List<Preference> mapToPreferenceList(List<PreferenceDto> dtoList) {
+        System.out.println("TEST. dtoList(size)" + dtoList.size());
         return dtoList.stream()
                 .map(this::mapToPreference)
                 .collect(Collectors.toList());
@@ -46,7 +46,7 @@ public class PreferenceMapper {
                 .trailEnd( preference.getTrailEnd() )
                 .minTemperature( Integer.parseInt( preference.getMinTemperature() ) )
                 .distance( BigInteger.valueOf( Integer.parseInt( preference.getDistance() ) ) )
-                .userDto( userClient.getUserById( Long.parseLong( preference.getUserId() ) ) )
+                .userId( userClient.getUserById(Long.parseLong(preference.getUserId())).getId() )
                 .build();
     }
 

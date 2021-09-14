@@ -27,8 +27,6 @@ public class PreferenceFacade {
     }
 
     public List<Preference> getAllPreferences() {
-        System.out.println("TEST: PreferenceFacade::getAllPreferences: " + preferenceClient.getAllPreferences());
-        System.out.println("TEST: PreferenceFacade::getAllPreferences::size?: " + preferenceClient.getAllPreferences().getPreferences().size());
         return preferenceMapper.mapToPreferenceListFromPreferenceListDto( preferenceClient.getAllPreferences());
     }
 
